@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>JSP Page</title>
+		<script src="js/jquery-1.10.2.min.js"></script>
+		<script src="js/My97DatePicker/WdatePicker.js"></script>
+		<script src="js/jquery.serializeJSON/jquery.serializejson.js"></script>
+		<script src="testjs/testUtil.js"></script>
+		<script src="testjs/test.js"></script>
+	</head>
+
+	<body>
+		<form name="search_form" id="search_form">
+			<table>
+				<tr>
+					<td>姓名:</td>
+					<td><input type="text" name="userName" /> </td>
+				</tr>
+				<tr>
+					<td>年龄:</td>
+					<td><input type="text" name="age" /> </td>
+				</tr>
+				<tr>
+					<td>性别:</td>
+					<td>
+						<select name="sex">
+							<option value="">请选择</option>
+							<option value="man">男</option>
+							<option value="woman">女</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>出生日期:</td>
+					<td>
+						<input type="text" name="birth" onclick="WdatePicker({dataFmt:'yyyy-MM-dd HH:mm:ss'})" />
+					</td>
+				</tr>
+				<tr>
+					<td>爱好:</td>
+					<td><input type="checkbox" name="love" value="game" />游戏<input type="checkbox" name="love" value="basketball" />篮球 </td>
+				</tr>
+				<tr>
+					<td>级别:</td>
+					<td><input type="radio" name="major" value="1" />初级程序员 <input type="radio" name="major" value="2" />中级程序员</td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<button value="查询" id="search_btn" class="search_btn">查询</button>
+					</td>
+				</tr>
+			</table>
+		</form>
+		<script type="text/javascript" src="js/test.js" ></script>
+		<script type="text/javascript" src="js/testUtil.js" ></script>
+		<script>
+			// 注意实例化 需要的js对象
+			var test;
+			$(function() {
+				test = new Test();
+			})
+		</script>
+	</body>
+
+</html>
