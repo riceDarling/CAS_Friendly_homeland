@@ -52,8 +52,9 @@ $.fn['layerUi'] = function() {
 		},
 		autoCenter: function(el1) {
 			//获取可视区域的宽、高
-			bodyW = document.documentElement.clientWidth;
-			bodyH = document.documentElement.clientHeight;
+			//document.documentElement.clientWidth || document.body.clientWidth； 获得可视区的宽度。后面是兼容chrome，前面是兼容其它浏览器。
+			bodyW = document.documentElement.clientWidth || document.body.clientWidth;
+			bodyH = document.documentElement.clientHeight || document.body.clientHeight;
 
 			//获取元素的宽、高
 			elW = el1.offsetWidth;
