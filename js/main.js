@@ -77,7 +77,7 @@ Drag.prototype.fnUp = function(){
 };
 */
 
-function Drag(){
+/*function Drag(){
 	this.obj = null;
 	this.disX = 0;
 	this.disY = 0;
@@ -124,4 +124,4 @@ Drag.prototype = {
 window.onload = function(){
 	var drag = new Drag();
 	drag.init('drag');
-};
+};*/
