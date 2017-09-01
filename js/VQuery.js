@@ -12,8 +12,8 @@
  
  */
 
-$.fn['layerUi'] =  $(window).resize =  function() {
-	var bodyW = 1,
+$.fn['layerUi'] = function() {
+	var bodyW,
 		bodyH,
 		elW,
 		elH;
@@ -23,18 +23,28 @@ $.fn['layerUi'] =  $(window).resize =  function() {
 			return document.querySelector(elements);
 		},
 		init: function(el1, el2) {
-
-			this.autoCenter(this.g(el1));
-
+			var self = this;
+			//this.autoCenter(this.g(el1));
+			
+			self.onResetSelf(self,self.g(el1));
+			
 			if(arguments.length == 2) {
 
-				this.fillToBody(this.g(el2));
-			}
+				self.onReseSizeSelf( self , self.g(el2) );
+				
+			};
 			
-			return {
-				el1,
-				el2
-			}
+			window.onresize = function(){
+				
+				self.onResetSelf( self,self.g(el1) );
+				self.onReseSizeSelf( self,self.g(el2) );
+			};
+		},
+		onResetSelf : function(obj,els){
+			obj.autoCenter(els);
+		},
+		onReseSizeSelf : function ( obj , els ) {
+			obj.fillToBody(els);
 		},
 		autoCenter: function(el1) {
 			//获取可视区域的宽、高
