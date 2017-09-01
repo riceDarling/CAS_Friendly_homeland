@@ -4,6 +4,8 @@
  * 主要调用方法为 $( '元素标签' ).执行方法( '参数1','参数2' )
  * 
  * */
+
+
 /*--------------------------------------自动居中(登录浮层) start -----------------------------------*/
 /*
  g() -- 获取元素对象
@@ -20,6 +22,8 @@ $.fn['layerUi'] = function() {
 
 	var _dialog = {
 		g: function(elements) {
+			//querySelector 和 querySelectorAll 方法 主流浏览器均支持了他们。
+			//包括 IE8(含) 以上版本、 Firefox、 Chrome、Safari、Opera。
 			return document.querySelector(elements);
 		},
 		init: function(el1, el2) {
@@ -75,8 +79,7 @@ $.fn['layerUi'] = function() {
 
 /*--------------------------------------拖拽组件  start -------------------------------------------*/
 $.fn['Dragdealer'] = function() {
-	var self = this,
-		obj = null,
+	var obj = null,
 		disX = 0,
 		disY = 0,
 		_zIndex = 9999,
