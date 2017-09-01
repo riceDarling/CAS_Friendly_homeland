@@ -5,37 +5,60 @@
  * 
  * */
 /*--------------------------------------自动居中(登录浮层) start -----------------------------------*/
-//获取元素对象
-function g(id) {
-	return document.getElementById(id);
+/*
+ g() -- 获取元素对象
+ autoCenter() -- 自动居中元素(el = Element)
+ fillToBody() -- 自动扩展元素到全部显示区域
+ 
+ */
+
+$.fn['layerUi'] = function() {
+	var bodyW = 1,
+		bodyH,
+		elW,
+		elH;
+
+	var _dialog = {
+		g: function(elements) {
+			return document.querySelector(elements);
+		},
+		init: function(el1, el2) {
+
+			this.autoCenter(this.g(el1));
+
+			if(arguments.length == 2) {
+
+				this.fillToBody(this.g(el2));
+			}
+		},
+		autoCenter: function(el1) {
+
+			//获取可视区域的宽、高
+			bodyW = document.documentElement.clientWidth;
+			bodyH = document.documentElement.clientHeight;
+
+			//获取元素的宽、高
+			elW = el1.offsetWidth;
+			elH = el1.offsetHeight;
+
+			//设置居中 (可视区域宽/高 - 元素宽/高)/2
+			el1.style.left = (bodyW - elW) / 2 + 'px';
+			el1.style.top = (bodyH - elH) / 2 + 'px';
+
+		},
+		fillToBody: function(el2) {
+
+			el2.style.width = document.documentElement.clientWidth + 'px';
+			el2.style.height = document.documentElement.clientHeight + 'px';
+		}
+	}
+	return _dialog;
+
 };
 
-//自动居中元素 (el = Element)
-function autoCenter(el) {
-	var bodyW = document.documentElement.clientWidth;
-	var bodyH = document.documentElement.clientHeight;
-
-	var elW = el.clientWidth;
-	var elH = el.clientHeight;
-
-	el.style.left = (bodyW - elW) / 2 + 'px';
-	el.style.top = (bodyH - elH) / 2 + 'px';
-};
-
-function showDialog(el1,el2) {
-	autoCenter(g(el1));
-	fillToBody(g(el2));
-};
-//	自动扩展元素到全部显示区域
-function fillToBody(el) {
-	el.style.width = document.documentElement.clientWidth + 'px';
-	el.style.height = document.documentElement.clientHeight + 'px';
-};
-//侦听浏览器窗口大小变化
-window.onresize = showDialog;
-
+/*调用*/
+//$('body').layerUi().init();
 /*--------------------------------------自动居中(登录浮层) end -----------------------------------*/
-
 
 /*--------------------------------------拖拽组件  start -------------------------------------------*/
 $.fn['Dragdealer'] = function() {
@@ -63,9 +86,9 @@ $.fn['Dragdealer'] = function() {
 			var ev = ev || window.event;
 			this._el1 = document.querySelector(el1);
 			this._el2 = document.querySelector(el2);
-			
+
 			var _this = this;
-			
+
 			this._el1.onmousedown = function(ev) {
 				var ev = ev || window.event;
 				_this.fnDown(ev);

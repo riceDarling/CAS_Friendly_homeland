@@ -130,13 +130,13 @@
 
 	<body>
 		<div class="link">
-			<a href="javascript:showDialog();">登录</a>
+			<a id="dialogBtn" href="javascript:;">登录</a>
 		</div>
 		<div class="ui-mask" id="mask" onselectstart="return false"></div>
 		<div class="ui-dialog" id="dialogMove" onselectstart='return false;'>
 			<div class="ui-dialog-title" id="dialogDrag" onselectstart="return false;">
 				登录通行证
-				<a class="ui-dialog-closebutton" href="javascript:hideDialog();"></a>
+				<a class="ui-dialog-closebutton" id="closebutton" href="javascript:;"></a>
 			</div>
 			<div class="ui-dialog-content">
 				<div class="ui-dialog-l40 ui-dialog-pt15">
@@ -159,8 +159,24 @@
 		<script type="text/javascript" src="js/jquery-2.1.0.js" ></script>
 		<script type="text/javascript" src="js/VQuery.js" ></script>
 		<script type="text/javascript">
+			
 			$('body').Dragdealer().init('#dialogDrag','#dialogMove');
-			//获取元素对象
+			
+			var move = document.getElementById("dialogMove");
+			var mask = document.getElementById("mask");
+			$("#dialogBtn").click(function(){
+				move.style.display = 'block';
+				mask.style.display = 'block';
+				
+				$('body').layerUi().init('#dialogMove','#mask');
+				
+				
+			});
+			$("#closebutton").click(function(){
+				move.style.display = 'none';
+				mask.style.display = 'none';
+			})
+			/*//获取元素对象
 			function g(id) {
 				return document.getElementById(id);
 			}
@@ -196,7 +212,7 @@
 			}
 
 			//	侦听浏览器窗口大小变化
-			window.onresize = showDialog;
+			window.onresize = showDialog;*/
 
 		</script>
 	</body>
