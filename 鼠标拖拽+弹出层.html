@@ -166,16 +166,18 @@
 			
 			var move = document.getElementById("dialogMove");
 			var mask = document.getElementById("mask");
+			
 			$("#dialogBtn").click(function(){
 				move.style.display = 'block';
 				mask.style.display = 'block';
 				
 				$('body').layerUi().init('#dialogMove','#mask');
 				
-				
 			});
 			
-			window.onresize = $('body').layerUi().init('#dialogMove');
+			window.onresize = function(){
+				$('body').layerUi().init('#dialogMove');
+			};
 			
 			$("#closebutton").click(function(){
 				move.style.display = 'none';

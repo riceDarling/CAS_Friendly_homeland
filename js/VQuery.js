@@ -12,7 +12,7 @@
  
  */
 
-$.fn['layerUi'] = function() {
+$.fn['layerUi'] =  $(window).resize =  function() {
 	var bodyW = 1,
 		bodyH,
 		elW,
@@ -29,6 +29,11 @@ $.fn['layerUi'] = function() {
 			if(arguments.length == 2) {
 
 				this.fillToBody(this.g(el2));
+			}
+			
+			return {
+				el1,
+				el2
 			}
 		},
 		autoCenter: function(el1) {
@@ -50,9 +55,8 @@ $.fn['layerUi'] = function() {
 			el2.style.width = document.documentElement.clientWidth + 'px';
 			el2.style.height = document.documentElement.clientHeight + 'px';
 		}
-	}
+	};
 	return _dialog;
-
 };
 
 /*调用*/
