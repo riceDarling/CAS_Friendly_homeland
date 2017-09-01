@@ -159,6 +159,8 @@
 		<script type="text/javascript" src="js/jquery-2.1.0.js" ></script>
 		<script type="text/javascript" src="js/VQuery.js" ></script>
 		<script type="text/javascript">
+			//	侦听浏览器窗口大小变化
+			
 			
 			$('body').Dragdealer().init('#dialogDrag','#dialogMove');
 			
@@ -172,48 +174,13 @@
 				
 				
 			});
+			
+			window.onresize = $('body').layerUi().init('#dialogMove');
+			
 			$("#closebutton").click(function(){
 				move.style.display = 'none';
 				mask.style.display = 'none';
 			})
-			/*//获取元素对象
-			function g(id) {
-				return document.getElementById(id);
-			}
-
-			//	自动居中元素（el = Element）
-			function autoCenter(el) {
-				var bodyW = document.documentElement.clientWidth;
-				var bodyH = document.documentElement.clientHeight;
-
-				var elW = el.clientWidth;
-				var elH = el.clientHeight;
-
-				el.style.left = (bodyW - elW) / 2 + 'px';
-				el.style.top = (bodyH - elH) / 2 + 'px';
-			};
-			//	自动扩展元素到全部显示区域
-			function fillToBody(el) {
-				el.style.width = document.documentElement.clientWidth + 'px';
-				el.style.height = document.documentElement.clientHeight + 'px';
-			}
-
-			function showDialog() {
-				g('dialogMove').style.display = 'block';
-				g('mask').style.display = 'block';
-				autoCenter(g('dialogMove'));
-				fillToBody(g('mask'));
-			}
-
-			//	关闭对话框
-			function hideDialog() {
-				g('dialogMove').style.display = 'none';
-				g('mask').style.display = 'none';
-			}
-
-			//	侦听浏览器窗口大小变化
-			window.onresize = showDialog;*/
-
 		</script>
 	</body>
 

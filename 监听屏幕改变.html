@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+	<head lang="en">
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, width=device-width">
+		<meta content="telephone=no" name="format-detection">
+	</head>
+
+	<body>
+		<label id="show"></label>
+		<script>
+			window.onresize = adjuest;
+			//adjuest();
+
+			function adjuest() {
+				var label = document.getElementById("show");
+				label.innerHTML = "width = " + window.innerWidth + ";height=" + window.innerHeight;
+			}
+		</script>
+	</body>
+
+</html>
