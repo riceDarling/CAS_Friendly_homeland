@@ -33,7 +33,7 @@ $.fn['layerUi'] = function() {
 				self.onReseSizeSelf( self , self.g(el2) );
 				
 			};
-			
+			//	侦听浏览器窗口大小变化
 			window.onresize = function(){
 				
 				self.onResetSelf( self,self.g(el1) );
