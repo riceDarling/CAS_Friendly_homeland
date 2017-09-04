@@ -173,12 +173,13 @@
 		<div class="onscrollTo" id="onscrollTo" ><i class="glyphicon glyphicon-plane"></i></div>
 		<script type="text/javascript" src="js/jquery-2.1.0.js" ></script>
 		<script type="text/javascript" src="js/bootstrap.js" ></script>
-		<script type="text/javascript" src="js/VQuery.js" ></script>
+		<!--<script type="text/javascript" src="js/VQuery.js" ></script>-->
+		<script type="text/javascript" src="js/jquery.draggable.js" ></script>
 		<script type="text/javascript">
 			//拖拽
-			$('body').Dragdealer().init('#dialogDrag','#dialogMove');
+			//$('body').Dragdealer().init('#dialogDrag','#dialogMove');
 			//返回顶部
-			$('body').onScrollTo().init('onscrollTo');
+			//$('body').onScrollTo().init('onscrollTo');
 			
 			var move = document.getElementById("dialogMove");
 			var mask = document.getElementById("mask");
@@ -188,7 +189,8 @@
 				move.style.display = 'block';
 				mask.style.display = 'block';
 				
-				$('body').layerUi().init('#dialogMove','#mask');
+				//$('body').layerUi().init('#dialogMove','#mask');\n
+				$("#dialogMove").drag();
 				
 			});
 			
