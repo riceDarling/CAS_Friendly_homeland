@@ -41,6 +41,7 @@ $.fn['layerUi'] = function() {
 			window.onresize = function(){
 				
 				self.onResetSelf( self,self.g(el1) );
+				
 				self.onReseSizeSelf( self,self.g(el2) );
 			};
 		},
@@ -163,3 +164,47 @@ $.fn['Dragdealer'] = function() {
 //$('body').Dragdealer().init('div1');
 
 /*--------------------------------------拖拽组件  end -------------------------------------------*/
+
+
+/*-------------------------------------- 返回顶部  start ----------------------------------------*/
+$.fn[ 'onScrollTo' ] = function(){
+	var _toTop,
+		_oScrollW,
+		_oScrollH,
+		_oScrollTop;
+		
+		
+	var _scrollTo = {
+		init : function(el){
+			_toTop = document.getElementById(el);
+			
+			_oScrollW = document.documentElement.clientWidth || document.body.clientWidth;
+			_oScrollH = document.documentElement.clientHeight || document.body.clientHeight;
+			
+			
+			_toTop.style.left = _oScrollW - _toTop.offsetWidth + 'px';
+			_toTop.style.top = _oScrollH - _toTop.offsetHeight + 'px';
+			
+			console.log(_oScrollW - _toTop.offsetWidth);
+			console.log(_oScrollH - _toTop.offsetHeight);
+			
+			window.onscroll = function(ev){
+
+				_oScrollTop = document.documentElement.scrollTop || document.body.scrollTop; 
+				
+				_toTop.style.top = _oScrollH - _toTop.offsetHeight + _oScrollTop + 'px';
+			};
+			
+			_toTop.onclick = function(ev){
+
+				var oEvents = ev || window.event;
+				document.documentElement.scrollTop = document.body.scrollTop = 0;
+			}
+			
+		}
+	}
+	return _scrollTo;
+};
+
+
+/*-------------------------------------- 返回顶部  start ----------------------------------------*/

@@ -4,6 +4,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<title></title>
+		<link rel="stylesheet" href="css/bootstrap.css" />
 		<style>
 			body {
 				background: url(img/baidu_demo.png) #fff top center no-repeat;
@@ -11,6 +12,7 @@
 				margin: 0px;
 				font-size: 12px;
 				font-family: "微软雅黑";
+				height: 1000px;
 			}
 			
 			.link {
@@ -125,6 +127,17 @@
 				opacity: 0.4;
 				filter: Alpha(opacity=40);
 			}
+			.onscrollTo{
+				width: 55px;
+				height: 55px;
+				line-height: 55px;
+				text-align: center;
+				/*background: #47A3DA;*/
+				border-radius:100% ;
+				padding: 20px;
+				cursor: pointer;
+				position: absolute;
+			}
 		</style>
 	</head>
 
@@ -156,17 +169,21 @@
 				</div>
 			</div>
 		</div>
+		
+		<div class="onscrollTo" id="onscrollTo" ><i class="glyphicon glyphicon-plane"></i></div>
 		<script type="text/javascript" src="js/jquery-2.1.0.js" ></script>
+		<script type="text/javascript" src="js/bootstrap.js" ></script>
 		<script type="text/javascript" src="js/VQuery.js" ></script>
 		<script type="text/javascript">
-			//	侦听浏览器窗口大小变化
-			
-			
+			//拖拽
 			$('body').Dragdealer().init('#dialogDrag','#dialogMove');
+			//返回顶部
+			$('body').onScrollTo().init('onscrollTo');
 			
 			var move = document.getElementById("dialogMove");
 			var mask = document.getElementById("mask");
 			
+			//弹窗  + 遮罩
 			$("#dialogBtn").click(function(){
 				move.style.display = 'block';
 				mask.style.display = 'block';
