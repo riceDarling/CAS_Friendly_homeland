@@ -1,4 +1,5 @@
-;(function($, window, undefined) {
+;
+(function($, window, undefined) {
 	//#region 拖拽元素类
 	function DragElement(node) {
 
@@ -61,12 +62,11 @@
 				var dragElement = draggableConfig.dragElement = new DragElement($ele.get(0));
 
 				draggableConfig.mouse.setXY(event.clientX, event.clientY);
-				draggableConfig.dragElement
-					.setXY(dragElement.target.style.left, dragElement.target.style.top)
-					.setTargetCss({
-						"zIndex": draggableConfig.zIndex++,
-						"position": "relative"
-					});
+				draggableConfig.dragElement.setXY(dragElement.target.style.left, dragElement.target.style.top);
+				draggableConfig.dragElement	.setTargetCss({
+					"zIndex": draggableConfig.zIndex++,
+					"position": "relative"
+				});
 			},
 			"mouseover": function() {
 				$(this).css(draggableStyle.dragging);
@@ -81,13 +81,16 @@
 		if(draggableConfig.dragElement) {
 			var mouse = draggableConfig.mouse,
 				dragElement = draggableConfig.dragElement;
+			
 			dragElement.setTargetCss({
 				"left": parseInt(event.clientX - mouse.x + dragElement.x) + "px",
 				"top": parseInt(event.clientY - mouse.y + dragElement.y) + "px"
 			});
-
+			
+			//解除绑定事件
 			$document.off("mousemove", move);
 			setTimeout(function() {
+				//绑定事件
 				$document.on("mousemove", move);
 			}, 25);
 		}
