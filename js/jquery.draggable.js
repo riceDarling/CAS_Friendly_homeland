@@ -62,11 +62,12 @@
 				var dragElement = draggableConfig.dragElement = new DragElement($ele.get(0));
 
 				draggableConfig.mouse.setXY(event.clientX, event.clientY);
-				draggableConfig.dragElement.setXY(dragElement.target.style.left, dragElement.target.style.top);
-				draggableConfig.dragElement	.setTargetCss({
-					"zIndex": draggableConfig.zIndex++,
-					"position": "relative"
-				});
+				draggableConfig.dragElement
+					.setXY(dragElement.target.style.left, dragElement.target.style.top)
+					.setTargetCss({
+						"zIndex": draggableConfig.zIndex++,
+						"position": "relative"
+					});
 			},
 			"mouseover": function() {
 				$(this).css(draggableStyle.dragging);

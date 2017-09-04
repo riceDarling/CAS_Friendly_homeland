@@ -176,7 +176,7 @@ $.fn[ 'onScrollTo' ] = function(){
 		
 	var _scrollTo = {
 		init : function(el){
-			_toTop = document.getElementById(el);
+			_toTop = document.querySelector(el);
 			
 			_oScrollW = document.documentElement.clientWidth || document.body.clientWidth;
 			_oScrollH = document.documentElement.clientHeight || document.body.clientHeight;
