@@ -185,10 +185,8 @@ $.fn[ 'onScrollTo' ] = function(){
 			_toTop.style.left = _oScrollW - _toTop.offsetWidth + 'px';
 			_toTop.style.top = _oScrollH - _toTop.offsetHeight + 'px';
 			
-			console.log(_oScrollW - _toTop.offsetWidth);
-			console.log(_oScrollH - _toTop.offsetHeight);
 			
-			window.onscroll = function(ev){
+			window.onscroll = function(){
 
 				_oScrollTop = document.documentElement.scrollTop || document.body.scrollTop; 
 				
@@ -198,6 +196,7 @@ $.fn[ 'onScrollTo' ] = function(){
 			_toTop.onclick = function(ev){
 
 				var oEvents = ev || window.event;
+				
 				document.documentElement.scrollTop = document.body.scrollTop = 0;
 			}
 			
