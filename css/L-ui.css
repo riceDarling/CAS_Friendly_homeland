@@ -1,0 +1,240 @@
+@charset "utf-8";
+
+/*-------------------reset----------------*/
+
+body,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+dl,
+dd {
+	margin: 0;
+}
+
+body {
+	font: 12px "微软雅黑";
+}
+
+ul,
+ol {
+	margin: 0;
+	padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+strong,
+b {
+	font-weight: normal;
+}
+
+a {
+	text-decoration: none;
+}
+
+img {
+	border: none;
+	vertical-align: top;
+}
+
+li {
+	list-style: none;
+}
+
+.fl {
+	float: left;
+}
+
+.fr {
+	float: right;
+}
+
+.clearfix:after {
+	content: '';
+	display: none;
+	clear: both;
+	height: 0;
+	overflow: hidden;
+	visibility: hidden;
+}
+
+.clearfix {
+	zoom: 1;
+}
+
+
+/*.container-fluid{
+	padding-left: 0 !important;
+	padding-right: 0 !important;
+}*/
+
+
+/*头部导航*/
+
+.l-ui-header {
+	width: 100%;
+	height: 60px;
+	background: #000;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+
+.l-ui-header-logo {
+	font: 16px "微软雅黑";
+	height: 60px;
+	line-height: 60px;
+}
+
+.l-ui-header-logo span {
+	margin-left: 68px;
+}
+
+.l-ui-header-logo a {
+	color: #fff;
+	text-decoration: none;
+}
+
+.l-ui-header-menu {}
+
+.l-ui-header-menu ul {
+	margin-right: 68px;
+}
+
+.l-ui-header-menu li {
+	color: #fff;
+	float: left;
+	height: 60px;
+	line-height: 60px;
+	margin-right: 15px;
+}
+
+
+/*侧边栏*/
+
+.l-ui-aside-navbar {
+	width: 200px;
+	height: auto;
+	position: absolute;
+	top: 60px;
+	left: 0;
+	bottom: 0px;
+	background: #EEEEEE;
+}
+
+.l-ui-aside-navbar dt {
+	font: 14px "微软雅黑";
+	color: #333333;
+	height: 50px;
+	line-height: 50px;
+	cursor: pointer;
+	text-align: left;
+	border-bottom: 1px solid #E5E5E5;
+}
+
+.l-ui-aside-navbar dt span {
+	display: inline-block;
+	width: 125px;
+	margin-left: 5px;
+	/*margin-right: 80px;*/
+}
+
+.l-ui-aside-navbar dt span:hover,
+.l-ui-aside-navbar dd span:hover {
+	color: #0066CC;
+}
+
+.l-ui-aside-navbar dt i {
+	margin-left: 10px;
+}
+
+.l-ui-aside-navbar dd {
+	font: 14px "微软雅黑";
+	color: #333333;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	cursor: pointer;
+	display: none;
+}
+
+
+/*主要内容*/
+
+.l-ui-maincontainer {
+	height: 90.555%;
+	position: absolute;
+	left: 200px;
+	top: 60px;
+	right: 0px;
+	bottom: 0px;
+	/*background: #C0C0C0;*/
+}
+
+
+/*菜单收缩切换*/
+/*
+.dislpayArrow {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 200px;
+	width: 0px;
+	height: 100%;
+	z-index: 10
+}
+
+.dislpayArrow a {
+	position: absolute;
+	display: block;
+	width: 17px;
+	height: 61px;
+	top: 50%;
+	margin-top: -30px;
+	outline: none
+}
+
+.dislpayArrow a.open {
+	background-position: 0 -61px
+}
+
+.dislpayArrow a:hover {
+	text-decoration: none;
+	background-position: right 0
+}
+
+.dislpayArrow a.open:hover {
+	background-position: right -61px
+}
+
+.dislpayArrow {
+	-moz-transition: all 0.2s ease 0s;
+	-webkit-transition: all 0.2s ease 0s;
+	-ms-transition: all 0.2s ease 0s;
+	-o-transition: all 0.2s ease 0s;
+	transition: all 0.2s ease 0s
+}
+.dislpayArrow{
+	left: 0px;
+}
+*/
+/*脚部*/
+
+.l-ui-footer-wrapper {
+	height: 20%;
+	position: absolute;
+	left: 0px;
+	right: 0px;
+	bottom: 0px;
+	/*	background: #C9E2B3;*/
+}
