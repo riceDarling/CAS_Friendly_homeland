@@ -186,53 +186,18 @@ li {
 	/*background: #C0C0C0;*/
 }
 
-
-/*菜单收缩切换*/
-/*
-.dislpayArrow {
-	position: absolute;
-	top: 0;
-	bottom: 0;
-	left: 200px;
-	width: 0px;
-	height: 100%;
-	z-index: 10
+.l-ui-rice-tabwrapper{
+	width: 90%;
+	height: auto;
+	margin: 0 auto;
+	overflow: hidden;
+}
+.l-ui-rice-tabsearch{
+	width: 100%;
+	height: 40px;
 }
 
-.dislpayArrow a {
-	position: absolute;
-	display: block;
-	width: 17px;
-	height: 61px;
-	top: 50%;
-	margin-top: -30px;
-	outline: none
-}
 
-.dislpayArrow a.open {
-	background-position: 0 -61px
-}
-
-.dislpayArrow a:hover {
-	text-decoration: none;
-	background-position: right 0
-}
-
-.dislpayArrow a.open:hover {
-	background-position: right -61px
-}
-
-.dislpayArrow {
-	-moz-transition: all 0.2s ease 0s;
-	-webkit-transition: all 0.2s ease 0s;
-	-ms-transition: all 0.2s ease 0s;
-	-o-transition: all 0.2s ease 0s;
-	transition: all 0.2s ease 0s
-}
-.dislpayArrow{
-	left: 0px;
-}
-*/
 /*脚部*/
 
 .l-ui-footer-wrapper {
